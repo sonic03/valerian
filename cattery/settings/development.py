@@ -17,4 +17,4 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"static"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') #canlya atarken burayı aç yukarısını kapat
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static') #canlya atarken burayı aç yukarısını kapat
