@@ -1,4 +1,4 @@
-from cattery.settings import *
+from cattery.settings.base import *
 
 DEBUG = False
 
