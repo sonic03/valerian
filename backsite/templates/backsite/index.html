@@ -1,0 +1,86 @@
+{% extends 'backsite/main.html' %}
+{% load static %}
+
+
+{% block body %}
+<div class="container-fluid p-0">
+ <div class="row">
+   <div class="col-md-2">
+     <div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title">Aktif Yazılar</h5>
+													</div>
+
+													<div class="col-auto">
+														<div class="stat text-primary">
+															<i class="align-middle" data-feather="book-open"></i>
+														</div>
+													</div>
+												</div>
+												<h1 class="mt-1 mb-3">{{active_blogs}}</h1>
+											</div>
+										</div>
+   </div>
+   <div class="col-md-2">
+     <div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title">Bütün Yazılar</h5>
+													</div>
+
+													<div class="col-auto">
+														<div class="stat text-primary">
+															<i class="align-middle" data-feather="layers"></i>
+														</div>
+													</div>
+												</div>
+												<h1 class="mt-1 mb-3">{{total_blogs}}</h1>
+											</div>
+										</div>
+   </div>
+
+   <div class="col-md-2">
+     <div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title">Aktif Kediler</h5>
+													</div>
+
+													<div class="col-auto">
+														<div class="stat text-primary">
+															<i class="align-middle" data-feather="book-open"></i>
+														</div>
+													</div>
+												</div>
+												<h1 class="mt-1 mb-3">{{active_cats}}</h1>
+											</div>
+										</div>
+   </div>
+
+   <div class="col-md-2">
+     <div class="card">
+											<div class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title">Bütün Kediler</h5>
+													</div>
+
+													<div class="col-auto">
+														<div class="stat text-primary">
+															<i class="align-middle" data-feather="layers"></i>
+														</div>
+													</div>
+												</div>
+												<h1 class="mt-1 mb-3">{{total_cats}}</h1>
+											</div>
+										</div>
+   </div>
+
+ </div>
+
+</div>
+{% endblock %}

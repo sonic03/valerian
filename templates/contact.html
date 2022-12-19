@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css %}
+{% endblock %}
+{% block js %}
+<script type="text/javascript">
+  function insta(){
+    window.open('https://www.instagram.com/honeyvaleriancattery','_blank');
+  };
+  function whatsapp(){
+    window.open('https://wa.me/05555844524','_blank');
+  }
+
+  function sendMail(){
+    let firstname=$('[name="firstname"]').val();
+    let lastname=$('[name="lastname"]').val();
+    let email=$('[name="email"]').val();
+    let message=$('[name="message"]').val();
+
+    if(!firstname || !lastname || !email || !message){
+      $.notify("Alanları Doldurunuz!", {align:"center", verticalAlign:"top"});
+    }else{
+      $('.wait').show();
+      $.ajax({
+        url:'{% url "contact_us" %}',
+        method:'post',
+        data:$('#messageForm').serialize(),
+        success:function(res){
+          $('.wait').hide();
+          Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: res.msg,
+            text:'Ana Sayfaya Yönlendiriliyorsunuz.',
+            showConfirmButton: false,
+
+          });
+          function redirect(){
+            window.location.href="{% url 'index' %}";
+          }
+          window.setTimeout( redirect, 5000 );
+
+        }
+      })
+    }
+  }
+
+
+</script>
+
+{% endblock %}
+{% block body %}
+<section class="astroid-section" id="ts-451555907311432"><div class="container"><div class="astroid-row row" id="ar-701555907311432"><div class="astroid-column col-lg-12 order-xl-0 order-lg-0 order-md-0 order-sm-0 order-0" id="ac-651555907311432"><div class="astroid-module-position" id="bp-731555907356229"> <div class="moduletable ">
+         <div aria-label="breadcrumbs" role="navigation" class="mod_breadcrumbs">
+	    <h4 style="text-transform:none;">Bizimle İletişime Geçin</h4>
+
+</div> </div> </div></div></div></div></section>
+<section class="astroid-section astroid-component-section" id="cs-1528971561366"><div class="container"><div class="astroid-row row" id="ar-1528971561366"><div class="astroid-column col-md-12" id="ac-511555906566780"><div class="astroid-message" id="am-711555907090073"><div id="system-message-container">
+   </div></div><div class="astroid-component" id="ca-1121555907157112"><main class="astroid-component-area">
+   <div class="item-page" itemscope="" itemtype="https://schema.org/Article">
+   <meta itemprop="inLanguage" content="en">
+
+
+
+		       <div class="item-detail-container">
+
+
+
+<div itemprop="articleBody" class="article-body">
+
+
+</div>
+
+
+<section id="section-id-1556338926945" class="sppb-section sppb-section-content-center"><div class="sppb-row-overlay"></div><div class="sppb-row-container"><div class="sppb-row sppb-align-center"><div class="sppb-col-md-6" id="column-wrap-id-1556338926953"><div id="column-id-1556338926953" class="sppb-column"><div class="sppb-column-addons"><div id="sppb-addon-wrapper-1584610450450" class="sppb-addon-wrapper"><div id="sppb-addon-1584610450450" class="clearfix "><div class="sppb-addon sppb-addon-text-block  "><div class="sppb-addon-content">Kedilerimiz ve bizim hakkımızda detaylı bilgiler için sosyal medyadan,mobilden ve ya sitemizden form doldurarak bize ulaşabilirsiniz. Mümkün olan en kısa sürede size dönüş yapmaktayız.</div></div></div></div><div id="section-id-1584610450451" style="margin-top:10%" class="sppb-section"><div class="sppb-container-inner"><div class="sppb-row"><div class="sppb-col-md-6" style="margin: 0 -2%;" id="column-wrap-id-1584610450452"><div id="column-id-1584610450452" class="sppb-column" onclick="insta()"><div class="sppb-column-addons"><div id="sppb-addon-wrapper-1584610450492" class="sppb-addon-wrapper"><div id="sppb-addon-1584610450492" class="clearfix "><div class="sppb-icon  sppb-text-left sppb-icon-hover-effect-zoom-in" style='text-align:center;font-size:5rem'><span class="sppb-icon-inner"><i class="fa fa-instagram" style="color: #c88948;" aria-hidden="true"></i></span></div></div></div><div id="sppb-addon-wrapper-1584610450468" class="sppb-addon-wrapper" style='text-align:center;'><div id="sppb-addon-1584610450468" class="clearfix "><div class="sppb-addon sppb-addon-text-block  "><h5 class="sppb-addon-title" style="color: #c88948;font-size:larger;">@honeyvaleriancattery</h5></div></div></div></div></div></div><div class="sppb-col-md-6" id="column-wrap-id-1584610450455"><div id="column-id-1584610450455" onclick="whatsapp()" class="sppb-column"><div class="sppb-column-addons"><div id="sppb-addon-wrapper-1584610450509" class="sppb-addon-wrapper"><div id="sppb-addon-1584610450509" class="clearfix "><div class="sppb-icon  sppb-text-left sppb-icon-hover-effect-zoom-in" style="text-align:center;font-size:5rem"><span class="sppb-icon-inner"><i class="fa fa-whatsapp" style="color: #c88948;" aria-hidden="true"></i></span></div></div></div><div id="sppb-addon-wrapper-1584610450483" class="sppb-addon-wrapper"><div id="sppb-addon-1584610450483" class="clearfix "><div class="sppb-addon sppb-addon-text-block  "><h5 class="sppb-addon-title" style="color: #c88948;font-size:larger;text-align:center;">WhatsApp</h5></div></div></div></div></div></div></div></div></div></div></div></div><div class="sppb-col-md-6" id="column-wrap-id-1584610450447"><div id="column-id-1584610450447" class="sppb-column"><div class="sppb-column-addons"><div id="sppb-addon-wrapper-1584610450518" class="sppb-addon-wrapper"><div id="sppb-addon-1584610450518" class="clearfix "><div class="sppb-addon sppb-addon-form-builder"><div class="sppb-addon-content"><form method="post" id='messageForm' class="sppb-addon-form-builder-form">{% csrf_token %}<div class="sppb-form-group sppb-form-builder-field-0"><input type="text" id="sppb-form-builder-field-0" name="firstname" class="sppb-form-control" placeholder="İsim"></div><div class="sppb-form-group sppb-form-builder-field-1"><input type="text" id="sppb-form-builder-field-1" name="lastname" class="sppb-form-control" placeholder="Soyisim"></div><div class="sppb-form-group sppb-form-builder-field-2"><input type="email" name="email" class="sppb-form-control" placeholder="Email" required=""><span class="sppb-form-builder-required">Please fill the required field.</span></div><div class="sppb-form-group sppb-form-builder-field-3"><input type="tel" name="tel" class="sppb-form-control" placeholder="Telefon"></div><div class="sppb-form-group sppb-form-builder-field-4"><textarea name="message" id="sppb-form-builder-field-4" class="sppb-form-control not-resize" placeholder="Mesaj" required=""></textarea><span class="sppb-form-builder-required">Please fill the required field.</span></div><div class="sppb-form-builder-btn sppb-text-left "><span type="button" style="background:#c88948;float:right" id="sendMail" onclick="sendMail()" class="sppb-btn sppb-btn-custom sppb-btn-rounded" aria-label="Send Message">Mesaj Gönder</span></div></form><div style="display:none;margin-top:10px;" class="sppb-ajax-contact-status"></div></div></div></div></div></div></div></div></div></div></section>
+
+</div>
+
+
+
+
+</div> </div> </div></div></div></div></section>
+{% endblock %}

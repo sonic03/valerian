@@ -1,0 +1,137 @@
+{% extends 'backsite/main.html' %}
+{% load static %}
+{% block js %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#save_type').click(function(e){
+      e.preventDefault();
+      let cat_type=$('#cat_type').val();
+      let cat_type_id=$('#cat_type_id').val();
+      let url='{% url "backsite:cat_type_ajax" %}';
+      $.ajax({
+        url:url,
+        method:'POST',
+        data:{cat_type:cat_type,cat_type_id:cat_type_id,
+        'csrfmiddlewaretoken': '{{ csrf_token }}'},
+        success:function(res){
+          console.log(res);
+          if(res.success){
+            toastr.success(res.msg);
+            setTimeout(function() {
+              location.reload();
+            }, 2000);
+          }else{
+            toastr.error(res.msg);
+          }
+
+
+        }
+      });
+    });
+
+    $('[id^="del_type_"]').click(function(){
+      let id=$(this).attr('id').split('del_type_')[1];
+      let url='{% url "backsite:del_cat_type_ajax" %}';
+      $.ajax({
+        url:url,
+        method:'get',
+        data:{id:id},
+        success:function(res){
+          console.log(res);
+          if(res.success){
+            toastr.success(res.msg);
+            setTimeout(function() {
+              location.reload();
+            }, 2000);
+          }else{
+            toastr.error(res.msg);
+          }
+        }
+      })
+    })
+
+    $('[id^="edit_type_"]').click(function(){
+      let id=$(this).attr('id').split('edit_type_')[1];
+      let url='{% url "backsite:edit_cat_type_ajax" %}';
+      $.ajax({
+        url:url,
+        method:'get',
+        data:{id:id},
+        success:function(res){
+          console.log(res);
+          if(res.success){
+            $('#cat_type').val(res.title);
+            $('#cat_type_id').val(res.id);
+            $('#cat_add_modal').addClass('show');
+          }else{
+            toastr.error(res.msg);
+          }
+        }
+      })
+    })
+
+
+
+  });
+
+</script>
+
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid p-0">
+
+        <h1 class="h3 mb-3">Ayarlar</h1>
+  <div class="row">
+      <div class="col-12 col-md-3">
+        {% if about %}
+        <a href="{% url 'backsite:update_about' id=about.id %}" class="btn btn-primary btn-lg">Hakkımınzda Yazısı Düzenle</a>
+
+            {% else %}
+            <a href="{% url 'backsite:create_about' %}" class="btn btn-primary btn-lg">Hakkımınzda Yazısı Ekle</a>
+
+          {% endif %}
+        </div>
+        <div class='col-md-12' style="margin-top:1%;">
+          <h2>Kedi Türleri<button id='cat_modal_button' type="button" class="btn btn-primary btn-lg" style='float:right;' data-bs-toggle="modal" data-bs-target="#cat_add_modal"">Kedi Türü Ekle</button></h2>
+          <div class="cat_types" style='padding:1%'>
+            {% for type in cat_types %}
+            <span class="type_span">{{ type.title }} <button class='type_del_button' type="button" id="edit_type_{{ type.id }}" ><i class="fa fa-edit" aria-hidden="true"></i></button><button class='type_del_button' type="button" id="del_type_{{ type.id }}" ><i class="fa fa-times" aria-hidden="true"></i></button></span>
+            {% endfor %}
+
+          </div>
+        </div>
+
+
+  </div>
+<!-- kedi türü ekleme modal -->
+
+</div>
+
+  <div class="modal fade bg" style="margin-top:2%;" id="cat_add_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kedi Türü Ekle<button type="button" class="btn-close" style="float:right;" data-bs-dismiss="modal" aria-label="Close"></button></h5>
+
+      </div>
+      <div class="modal-body">
+        <div class="col-sm-12">
+          <form id='cat_form' method="post">
+            {% csrf_token %}
+            <input type="text" class="form-control" id="cat_type" name='cat_type'>
+            <input type="hidden" class="form-control" id="cat_type_id" name='cat_type_id'>
+          </form>
+      </div>
+      </div>
+      <div class="modal-footer" style='margin-top:1%;'>
+        <button type="button" id='save_type'style="float:right;" class="btn btn-primary">Kaydet</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+{% endblock %}

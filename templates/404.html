@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style media="screen">
+      body{
+        background:url({% static 'img/noise.png'%})
+      }
+      .inner{
+        margin-top:35%;
+      }
+      .inner h1{
+        font-weight: 900;
+        font-size: 650%;
+      }
+      .bg{
+        background:url({% static 'img/kitty.png'%});
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: 74% 100%;
+        margin: 8% 0 0 0;
+      }
+    </style>
+    <script type="text/javascript">
+      setTimeout(function(){
+        window.location.href="{% url 'index' %}";
+        }, 3000);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-8 bg">
+          <div class="inner">
+            <h1>404 Not Found</h1>
+            <h3>Sayfa bulunamadı</h3>
+            <h5>Ana sayfaya yönlendiriliyorsunuz</h5>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>

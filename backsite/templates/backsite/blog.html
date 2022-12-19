@@ -1,0 +1,31 @@
+{% extends 'backsite/main.html' %}
+{% load static %}
+
+
+{% block body %}
+<div class="container-fluid p-0">
+
+        <h1 class="h3 mb-3">Blog Kontrol Sayfası <a href="{% url 'backsite:create_blog' %}" class="btn btn-primary btn-lg" style="float:right">Blog Ekle</a></h1>
+  <div class="row">
+      {% for blog in blogs %}
+      <div class="col-12 col-md-3">
+            <div class="card">
+              <img class="card-img-top" src="{{blog.img.url}}" style="max-width: 44%;margin: 0 auto;">
+              <div class="card-header">
+                <h5 class="card-title mb-0">{{blog.title}}</h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text">{{blog.content|safe|truncatechars:11}}</p>
+                <a href="{% url 'frontsite:blog_page' slug=blog.url %}" target="_blank" class="btn btn-primary"><i style="vertical-align: text-top!important;" data-feather="arrow-right"></i> Makaleye Git</a>
+                <a href="{% url 'backsite:update_blog' id=blog.id %}" class="btn btn-success"><i style="vertical-align: text-top!important;" data-feather="edit"></i> Düzenle</a>
+                <a href="{% url 'backsite:delete_blog' id=blog.id %}" class="btn btn-danger"><i style="vertical-align: text-top!important;" data-feather="delete"></i> Sil</a>
+              </div>
+            </div>
+          </div>
+
+      {% endfor %}
+
+  </div>
+
+</div>
+{% endblock %}

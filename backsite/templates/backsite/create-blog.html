@@ -1,0 +1,62 @@
+{% extends 'backsite/main.html' %}
+{% load static %}
+{% block js%}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid p-0">
+  <div class='row'>
+    <div class="col-md-8">
+      <form method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title mb-0">{{form.title.label}}</h5>
+                  </div>
+                  <div class="card-body">
+                    {{form.title}}
+                  </div>
+                  <div class="card-header">
+                    <h5 class="card-title mb-0">{{form.content.label}}</h5>
+                  </div>
+                  <div class="card-body">
+                    {{form.content}}
+                  </div>
+                  <div class="card-header">
+                    <h5 class="card-title mb-0">{{form.url.label}}</h5>
+                  </div>
+                  <div class="card-body">
+                    {{form.url}}
+                  </div>
+                  <div class="card-header">
+                    <h5 class="card-title mb-0">Başlık Resmi</h5>
+                  </div>
+                  <div class="card-body">
+                    {{form.img}}
+                  </div>
+                  <div class="card-header">
+                    <h5 class="card-title mb-0">{{form.is_active.label}}</h5>
+                  </div>
+                  <div class="card-body">
+                    {{form.is_active}}
+                  </div>
+                  <div class="card-header">
+                    <h5 class="card-title mb-0">{{form.is_mainpage.label}}</h5>
+                  </div>
+                  <div class="card-body">
+                    {{form.is_mainpage}}
+                  </div>
+                </div>
+                <button type='submit' class="btn btn-primary btn-lg">Kaydet</button>
+
+      </form>
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

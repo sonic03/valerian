@@ -1,0 +1,137 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css %}
+<style media="screen">
+	.contentP{
+		bottom: 7%;
+right: -15%;
+position: absolute;
+background: #c88948;
+color: white;
+width: 91%;
+font-size: x-large;
+padding: 2%;
+	}
+</style>
+{% endblock %}
+{% block body %}
+<section class="astroid-section" id="ts-451555907311432"><div class="container"><div class="astroid-row row" id="ar-701555907311432">
+	    <h2 class="heading-title-page">Kedilerimiz</h2>
+
+      <div class="astroid-column col-lg-6 order-xl-0 order-lg-0 order-md-0 order-sm-0 order-0 col-lg-9" id="ac-511555906566780">
+        <div data-blog-listings="" class="DS07740006468937992">
+          {% for cat in cats %}
+          <div class="eb-post" style="border-bottom: 3px solid #c88948;
+    padding: 1%;position:relative;">
+  <div class="eb-post-content">
+
+          <div class="eb-post-avatar t-lg-pull-left t-mr--md">
+      <div class="o-avatar  ">
+<div class="o-avatar__mobile"></div>
+
+
+</div>			</div>
+
+    <div class="eb-post-head no-overflow">
+                <h2 class="eb-post-title reset-heading ">
+<div href="#" class="text-inherit">{{cat.title}}</div>
+</h2>
+
+                <div class="eb-post-meta text-muted">
+
+  <div>
+  <div class="eb-post-date">
+
+<time class="eb-meta-date ddate">
+  Eklenme Tarihi: {{cat.created_at|date:"d-m-Y"}}</time>
+</div>
+</div>
+
+  <div>
+  <div class="eb-post-author">
+
+<span>
+
+</span>
+</div>
+</div>
+
+  <div>
+  <div class="eb-post-category comma-seperator">
+
+  <span>
+</span>
+</div>	</div>
+
+
+</div>
+            </div>
+
+            <div class="eb-post-body type-standard" data-blog-post-content="">
+    <div class="eb-post-thumb is-full">
+    <div class="eb-post-image" style="
+              width: 100%;
+              ">
+                      <img src="{{cat.img.url}}" alt="ludemeula-fernandes-9UUoGaaHtNE-unsplas_20210303-084920_1">
+
+        </div>
+</div>
+<div class="contentP">
+	{{cat.content|safe|truncatewords:15}}
+	<a href="{% url 'cat_info' id=cat.id %}" style='float: right;color:white;margin-top: 2%;'>
+Devamını Oku</a>
+</div>
+</div>
+
+
+              <div class="eb-post-more mt-20">
+
+      </div>
+
+
+
+
+
+
+
+        </div>
+
+
+  <script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"mainEntityOfPage": "https://pethub.jollyany.co/index.php/en/blog/easyblog/5-cleaning-hacks-to-beat-pet-allergies",
+"@type": "BlogPosting",
+"headline": "5 Cleaning Hacks to Beat Pet Allergies",
+"image": "https://pethub.jollyany.co/images/easyblog_articles/10/b2ap3_large_ludemeula-fernandes-9UUoGaaHtNE-unsplas_20210303-084920_1.jpg",
+"editor": "Victoria Rawson",
+"genre": "Blogs",
+"publisher": {
+  "@type": "Organization",
+  "name": "PetHub",
+  "logo": {"@type":"ImageObject","url":"https:\/\/pethub.jollyany.co\/media\/com_easyblog\/images\/schema\/logo.png","width":60,"height":60}	},
+"datePublished": "2021-02-19",
+"dateCreated": "2021-02-19",
+"dateModified": "2021-03-03",
+"description": "",
+"author": {
+  "@type": "Person",
+  "url": "https://pethub.jollyany.co/index.php/en/blog/easyblog/blogger/admin",
+  "name": "Victoria Rawson",
+  "image": "https://pethub.jollyany.co/images/easyblog_avatar/777_03_testimonial.jpg"
+}
+}
+</script>
+</div>
+          {% endfor %}
+
+
+        </div>
+
+      </div>
+
+      </div>
+
+
+      </section>
+{% endblock %}

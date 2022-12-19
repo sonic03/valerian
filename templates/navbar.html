@@ -1,0 +1,130 @@
+{% load static %}
+
+<section class="astroid-section astroid-header-section" id="hs-1529472563843">
+    <div class="container">
+        <div class="astroid-row row" id="ar-1529472563843">
+            <div class="astroid-column col-lg-12 order-xl-0 order-lg-0 order-md-0 order-sm-0 order-0" id="ac-1529472563843">
+                <div class="astroid-module-position" id="jh-1529472563843">
+                    <!-- header starts -->
+                    <header data-megamenu="" data-megamenu-class=".has-megamenu" data-megamenu-content-class=".megamenu-container" data-dropdown-arrow="true" data-header-offset="true" data-transition-speed="100" data-megamenu-animation="slide" data-easing="linear" data-astroid-trigger="hover"
+                        data-megamenu-submenu-class=".nav-submenu,.nav-submenu-static" id="astroid-header" class="astroid-header astroid-horizontal-header astroid-horizontal-center-header">
+                        <div class="d-flex flex-row justify-content-between">
+                            <div class="d-flex d-lg-none justify-content-start">
+                                <div class="header-mobilemenu-trigger d-lg-none burger-menu-button align-self-center" data-offcanvas="#astroid-mobilemenu" data-effect="mobilemenu-slide">
+                                    <button aria-label="Mobile Menu Toggle" class="button" id="mobileButton" onclick="mobileButton()" type="button"><span class="box"><span class="inner"></span></span></button>
+                                </div>
+                            </div>
+                            <div class="header-left-section d-flex justify-content-start">
+                                <!-- logo starts -->
+                                <!-- image logo starts -->
+                                <div class="logo-wrapper astroid-logo">
+                                    <a target="_self" class="astroid-logo astroid-logo-image d-flex align-items-center mr-0 mr-lg-4" href="{% url 'index' %}">
+                                        <img src="{% static 'img/yeniweblogo.png'%}" alt="PetHub" class="astroid-logo-default">
+                                        <img src="https://pethub.jollyany.co/images/tz_pethub/logo.png" alt="PetHub" class="astroid-logo-mobile">
+                                        <img src="https://pethub.jollyany.co/images/tz_pethub/logo_sticky.png" alt="PetHub" class="astroid-logo-sticky">
+                                    </a>
+                                </div>
+                                <!-- image logo ends -->
+                                <!-- logo ends -->
+                            </div>
+                            <div class="header-center-section d-none d-lg-flex justify-content-center flex-lg-grow-1">
+                                <div class=" align-self-center px-2 d-none d-lg-block">
+                                    <ul class="nav astroid-nav d-none d-lg-flex">
+                                        <li data-position="right" class="nav-item-submenu nav-item-id-325 nav-item-level-2">
+                                            <!--menu link starts-->
+                                            <a href="{% url 'about' %}" title="Hakkımızda" class="  nav-link-item-id-105 nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                <span class="nav-title">
+                                          Hakkımızda                              </span>
+                                            </a>
+                                            <!--menu link ends-->
+                                        </li>
+                                        <li data-position="right" class="nav-item nav-item-id-105 nav-item-level-1">
+                                            <!--menu link starts-->
+                                            <a href="{% url 'cats_blog' %}" title="Courses" class=" nav-link-item-id-105 nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                <span class="nav-title">
+                                          Kedilerimiz                            </span>
+                                            </a>
+                                            <!--menu link ends-->
+                                        </li>
+                                        <li data-position="right" class="nav-item nav-item-id-105 nav-item-level-1">
+                                            <!--menu link starts-->
+                                            <a href="{% url 'frontsite:blogs' %}" title="Blog" class=" nav-link-item-id-105 nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                <span class="nav-title">
+                                          Blog
+                  </span>
+                                            </a>
+                                            <!--menu link ends-->
+                                        </li>
+                                        <li data-position="right" class="nav-item nav-item-id-295 nav-item-level-1">
+                                            <!--menu link starts-->
+                                            <a href="{% url 'contact_us' %}" title="Shop" class=" nav-link-item-id-295 nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                <span class="nav-title">İletişim</span>
+                                            </a>
+                                            <!--menu link ends-->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="header-right-section d-flex justify-content-end">
+                                <div class="header-right-block d-none d-lg-block align-self-center mx-4">
+                                    <div class="header-block-item d-flex justify-content-end align-items-center"></div>
+                                </div>
+                                <div class="header-offcanvas-trigger burger-menu-button align-self-center d-block" data-offcanvas="#astroid-offcanvas" data-effect="st-effect-2" data-direction="offcanvasDirLeft">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="astroid-mobilemenu d-init dir-left mobilemenu-slide" data-class-prefix="astroid-mobilemenu" id="astroid-mobilemenu">
+                            <div class="burger-menu-button active">
+                                <button aria-label="Mobile Menu Toggle" id="menuClose" onclick='menuClose()' type="button" class="button close-offcanvas offcanvas-close-btn">
+                  <span class="box">
+                     <span class="inner"></span>
+                  </span>
+               </button>
+                            </div>
+                            <div class="astroid-mobilemenu-container">
+                                <div class="astroid-mobilemenu-inner">
+                                    <ul class="astroid-mobile-menu">
+                                        <li class="nav-item nav-item-id-105 nav-item-level-1 menu-item">
+                                            <!--menu link starts-->
+                                            <a href="{% url 'about' %}" title="Hakkımızda" class=" nav-link-item-id-105 nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                <span class="nav-title">
+                                                        Hakkımızda                              </span>
+                                            </a>
+                                            <!--menu link ends-->
+                                        </li>
+                                        <li class="nav-item nav-item-id-105 nav-item-level-1 menu-item">
+                                            <!--menu link starts-->
+                                            <a href="{% url 'cats_blog' %}" title="Kedilerimiz" class=" nav-link-item-id-105 nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                <span class="nav-title">
+                                                        Kedilerimiz                              </span>
+                                            </a>
+                                            <!--menu link ends-->
+                                        </li>
+                                        <li class="nav-item nav-item-id-105 nav-item-level-1 menu-item">
+                                            <!--menu link starts-->
+                                            <a href="{% url 'frontsite:blogs' %}" title="Blog" class=" nav-link-item-id-105 nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                <span class="nav-title">
+                                                        Blog                              </span>
+                                            </a>
+                                            <!--menu link ends-->
+                                        </li>
+                                        <li class="nav-item nav-item-id-105 nav-item-level-1 menu-item">
+                                            <!--menu link starts-->
+                                            <a href="{% url 'contact_us' %}" title="İletişim" class=" nav-link-item-id-105 nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                <span class="nav-title">
+                                                        İletişim                              </span>
+                                            </a>
+                                            <!--menu link ends-->
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- header ends -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
